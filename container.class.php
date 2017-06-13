@@ -9,7 +9,6 @@ class container {
 	}
 
 	public function set_value($value) {
-	die(var_dump($value));
 		$this->_value = $value;
 	}
 
