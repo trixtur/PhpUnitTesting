@@ -2,23 +2,46 @@
 require_once('container.class.php');
 require_once('fizzbuzz.php');
 
+/*
+ * Author: 		Benjamin Payne (trixtur@gmail.com)
+ * Date Modified: 	6/14/2017
+ *
+ * Class: fizzbuzz_test (is a PHPUnit_Framework_TestCase)
+ * Purpose: Test the code based on specifications in the User Acceptance Criteria.
+ */
+
 class fizzbuzz_test extends PHPUnit_Framework_TestCase {
+	/*
+	 * TEST: test_input_three
+	 * Description: Test the Function given an input of 3.
+	 * Based on UAC, this should print 'fizz'.
+	 */
 	function test_input_three() {
 		$test_value = 3;
 
+		/* Utilize the mockbuild to create a mock version of the container object.
+		 * set the methods which we intend to call and supply the paramters.
+		 */
 		$mock = $this->getMockBuilder('container')
 			->setMethods(['__construct','get_value','set_result','get_result'])
 			->setConstructorArgs(["$test_value"])
 			->getMock();
 
+		/* Specify the expects of the mock.
+		 * When we run the code we expect get_value to be called exactly 3 times.
+		 * We then supply what the method will return. Remember we are not testing the container here.
+		 * So we are free to fake all container code.
+		 */
 		$mock->expects($this->exactly(3))
 			->method('get_value')
 			->will($this->returnValue($test_value));
 
+		/* Specify that we intend to call set_result only once in the Function Under Test. */
 		$mock->expects($this->once())
 			->method('set_result')
 			->with($this->equalTo('fizz'));
 
+		/* Specify that we intend to call get_result only once in the Function Under Test. */
 		$mock->expects($this->once())
 			->method('get_result')
 			->will($this->returnValue('fizz'));
@@ -26,9 +49,15 @@ class fizzbuzz_test extends PHPUnit_Framework_TestCase {
 		// Run the code.
 		fizzbuzz($mock);
 
+		// Check that the result is what was specified in the User Acceptance Criteria #1
 		$this->assertEquals('fizz', $mock->get_result());
 	}
 
+	/*
+	 * TEST: test_input_five
+	 * Description: Test the Function given an input of 5.
+	 * Based on UAC, this should print 'buzz'.
+	 */
 	function test_input_five() {
 		$test_value = 5;
 
