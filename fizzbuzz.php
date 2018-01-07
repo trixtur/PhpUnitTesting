@@ -22,5 +22,6 @@ function fizzbuzz (container &$fizzbuzz_container) {
 	// Handles the additional considerations specified in the UAC because it appends to the result.
 	if (($fizzbuzz_container->get_value() % 5) == 0) $fizzbuzz_container->append_result('buzz');
 	// Handles Item 1 from the UAC.
-	if ((($fizzbuzz_container->get_value() % 3) != 0) && (($fizzbuzz_container->get_value() % 5) != 0)) $fizzbuzz_container->append_result($fizzbuzz_container->get_value());
+	if ((($fizzbuzz_container->get_value() % 3) != 0) && (($fizzbuzz_container->get_value() % 5) != 0)) 
+		$fizzbuzz_container->append_result($fizzbuzz_container->get_value());
 }
