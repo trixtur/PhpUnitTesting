@@ -85,6 +85,11 @@ class fizzbuzz_test extends PHPUnit_Framework_TestCase {
 		$this->assertEquals('buzz', $mock->get_result());
 	}
 
+	/*
+	 * TEST: test_input_fifteen
+	 * Description: Test the Function given an input of 15.
+	 * Based on UAC, this should print 'fizzbuzz'. Because of the additional considerations.
+	 */
 	function test_input_fifteen() {
 		$test_value = 15;
 
@@ -116,6 +121,11 @@ class fizzbuzz_test extends PHPUnit_Framework_TestCase {
 		$this->assertEquals('fizzbuzz', $mock->get_result());
 	}
 
+	/*
+	 * TEST: test_input_seven
+	 * Description: Test the Function given an input of 7.
+	 * Based on UAC, this should print '7'.
+	 */
 	function test_input_seven() {
 		$test_value = 7;
 
