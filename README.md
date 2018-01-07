@@ -7,7 +7,7 @@ This is a simple piece of code, easy to understand so that the focus can be cent
 
 You will see from the tests references back to the User Acceptance Criteria. These can be found in the user story.
 
-*Author: Benjamin Payne
-*Formal Email: benjamin.payne@pyrous.net
-*Informal Email: trixtur@gmail.com
-*Date: 6/14/2017 
+* Author: Benjamin Payne
+* Formal Email: benjamin.payne@pyrous.net
+* Informal Email: trixtur@gmail.com
+* Date: 6/14/2017 
