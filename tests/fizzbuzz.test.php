@@ -1,6 +1,4 @@
 <?php
-require_once('container.class.php');
-require_once('fizzbuzz.php');
 
 /*
  * Author: 		Benjamin Payne (trixtur@gmail.com)
@@ -9,8 +7,10 @@ require_once('fizzbuzz.php');
  * Class: fizzbuzz_test (is a PHPUnit_Framework_TestCase)
  * Purpose: Test the code based on specifications in the User Acceptance Criteria.
  */
+// use the following namespace
+use PHPUnit\Framework\TestCase;
 
-class fizzbuzz_test extends PHPUnit_Framework_TestCase {
+class fizzbuzz_test extends TestCase {
 	/*
 	 * TEST: test_input_three
 	 * Description: Test the Function given an input of 3.
